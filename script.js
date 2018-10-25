@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function(event) {
     let headerContainer = document.createElement('div');
     let header = document.createElement('h1');
     let headerText = document.createTextNode('This is an h1');
@@ -30,3 +31,4 @@
     let header6Text = document.createTextNode('This is an h6');
     h6.appendChild(header6Text);
     headerContainer.appendChild(h6);
+});
