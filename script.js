@@ -32,14 +32,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     h6.appendChild(header6Text);
     headerContainer.appendChild(h6);
 
-        // Event listener for each header
+    // Event listener for each header
     header.addEventListener('dblclick', colorChange);
     h2.addEventListener('dblclick',colorChange);
     h3.addEventListener('dblclick',colorChange);
     h4.addEventListener('dblclick',colorChange);
     h5.addEventListener('dblclick',colorChange);
     h6.addEventListener('dblclick',colorChange);
-    function colorChange(event) {
+
+    function colorChange(e) {
+    console.log(e.target)
     let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown'];
+    let randomIndex = Math.floor(Math.random()*colorChange.length)
+    e.target.style.color = colorChange[randomIndex]
     }
+    
+
+    // function to insert list item
+    function insertListItem (event) {
+
+    } 
+
+
 });
