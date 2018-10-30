@@ -34,24 +34,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     // Event listener for each header
     header.addEventListener('dblclick', colorChange);
-    h2.addEventListener('dblclick',colorChange);
-    h3.addEventListener('dblclick',colorChange);
-    h4.addEventListener('dblclick',colorChange);
-    h5.addEventListener('dblclick',colorChange);
-    h6.addEventListener('dblclick',colorChange);
+    h2.addEventListener('dblclick', colorChange);
+    h3.addEventListener('dblclick', colorChange);
+    h4.addEventListener('dblclick', colorChange);
+    h5.addEventListener('dblclick', colorChange);
+    h6.addEventListener('dblclick', colorChange);
 
     function colorChange(e) {
-    console.log(e.target)
-    let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown'];
-    let randomIndex = Math.floor(Math.random()*colorChange.length)
-    e.target.style.color = colorChange[randomIndex]
+        console.log(e.target)
+        let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown'];
+        let randomIndex = Math.floor(Math.random() * colorChange.length)
+        e.target.style.color = colorChange[randomIndex]
     }
-    
+
 
     // function to insert list item
-    function insertListItem (event) {
-
-    } 
-
+    function insertListItem() {
+        //define list Count 
+        let listCount = 0;
+        //listCount increments by 1
+        listCount++;
+        //Create list text for list element
+        let listText = document.createTextNode(' This is list item ' + listCount)
+        // Getting button Elements by Class Name btn. An array of 0 as it is the only class
+        let btn = document.getElementsByClassName('btn')[0];
+        // Event Listener so that List Item is inserted when clicked once
+        btn.addEventListener('click', insertListItem)
+    }
+    
 
 });
