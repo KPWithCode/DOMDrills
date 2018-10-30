@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     function colorChange(e) {
         console.log(e.target)
-        let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown'];
+        let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown', 'purple', 'Red'];
         let randomIndex = Math.floor(Math.random() * colorChange.length)
         e.target.style.color = colorChange[randomIndex]
     }
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let btn = document.getElementsByClassName('btn')[0];
         // Event Listener so that List Item is inserted when clicked once
         btn.addEventListener('click', insertListItem)
+        //Apply Event Listener to change of font to one of the other colors
     }
     
 
