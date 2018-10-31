@@ -76,6 +76,9 @@ listCount++;
         let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown', 'purple', 'Red'];
         let randomIndex = Math.floor(Math.random() * colorChange.length)
         e.target.style.color = colorChange[randomIndex]
+      });
+      list.addEventListener('dblclick', function (e) {
+          this.remove();
       })
     }
       
