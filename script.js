@@ -41,27 +41,35 @@ document.addEventListener("DOMContentLoaded", function (event) {
     h6.addEventListener('dblclick', colorChange);
 
     function colorChange(e) {
-        console.log(e.target)
+        // console.log(e.target)
         let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown', 'purple', 'Red'];
         let randomIndex = Math.floor(Math.random() * colorChange.length)
         e.target.style.color = colorChange[randomIndex]
     }
 
+// Getting button Elements by Class Name btn. An array of 0 as it is the only class
+let btn = document.getElementsByClassName('btn')[0];
+// Event Listener so that List Item is inserted when clicked once
+btn.addEventListener('click', insertListItem);
 
-    // function to insert list item
-    function insertListItem() {
-        //define list Count 
-        let listCount = 0;
-        //listCount increments by 1
-        listCount++;
+//define list Count 
+let listCount = 0;
+//listCount increments by 1
+listCount++;
+// function to insert list item
+    function insertListItem(e) {
+        
+        //Create Unordered List
+        let ul = document.createElement('ul');
+        //List element for Text
+        let list = document.createElement('li');
         //Create list text for list element
-        let listText = document.createTextNode(' This is list item ' + listCount)
-        // Getting button Elements by Class Name btn. An array of 0 as it is the only class
-        let btn = document.getElementsByClassName('btn')[0];
-        // Event Listener so that List Item is inserted when clicked once
-        btn.addEventListener('click', insertListItem)
+        let listText = document.createTextNode(' This is list item ' + listCount++)
+        //appending
+        headerContainer.appendChild(ul)
+        ul.appendChild(list);
+        list.appendChild(listText);
+       
         //Apply Event Listener to change of font to one of the other colors
     }
-    
-
 });
