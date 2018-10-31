@@ -47,11 +47,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         e.target.style.color = colorChange[randomIndex]
     }
 
+
+    
 // Getting button Elements by Class Name btn. An array of 0 as it is the only class
 let btn = document.getElementsByClassName('btn')[0];
 // Event Listener so that List Item is inserted when clicked once
 btn.addEventListener('click', insertListItem);
-
 //define list Count 
 let listCount = 0;
 //listCount increments by 1
@@ -70,6 +71,12 @@ listCount++;
         ul.appendChild(list);
         list.appendChild(listText);
        
-        //Apply Event Listener to change of font to one of the other colors
+      //Apply Event Listener to change of font to one of the other colors
+      list.addEventListener('click',function (e)   {
+        let colorChange = ['Green', 'Pink', 'Yellow', 'Burgundy', 'black', 'brown', 'purple', 'Red'];
+        let randomIndex = Math.floor(Math.random() * colorChange.length)
+        e.target.style.color = colorChange[randomIndex]
+      })
     }
+      
 });
